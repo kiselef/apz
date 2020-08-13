@@ -30,8 +30,9 @@ class Wrapper extends React.Component {
   }
 
   handleChangeNumber (number) {
+    const showAll = number === 0;
     const newRows = this.state.rows.map(row => {
-      row.visible = row.number === number;
+      row.visible = showAll || row.number === number;
       return row;
     });
 

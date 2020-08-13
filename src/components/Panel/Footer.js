@@ -20,9 +20,9 @@ class Footer extends React.Component {
       rangeTo: '',
     });
 
-    const value = +event.target.value;
+    const value = event.target.value;
     this.setState({number: value});
-    this.props.onChangeNumber(value);
+    this.props.onChangeNumber(+value);
   }
 
   handleChangeRange (event) {
