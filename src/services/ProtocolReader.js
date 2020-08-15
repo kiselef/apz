@@ -1,3 +1,6 @@
+/**
+ * Vendor business logic.
+ */
 export default class ProtocolReader {
   constructor(text) {
     this.splitObjectsParams = [];

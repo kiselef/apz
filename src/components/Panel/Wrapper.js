@@ -44,12 +44,10 @@ class Wrapper extends React.Component {
   handleChangeRange (range) {
     const rangeFrom = +range.rangeFrom;
     const rangeTo = +range.rangeTo;
+    const rangeToBiggerRangeFrom = rangeTo > rangeFrom;
 
-    function withRangeTo(number) {
-      if (rangeTo > rangeFrom) {
-        return number <= rangeTo;
-      }
-      return true;
+    function withRangeTo (number) {
+      return rangeToBiggerRangeFrom ? number <= rangeTo : true;
     }
 
     const newRows = this.state.rows.map(row => {
