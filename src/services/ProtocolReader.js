@@ -1,5 +1,6 @@
 /**
- * Vendor business logic.
+ * Сторонняя логика. Вынес ее пока в отдельный инструмент.
+ * 
  */
 export default class ProtocolReader {
   constructor(text) {
@@ -52,8 +53,6 @@ export default class ProtocolReader {
   }
 
   validate () {
-    console.group('Проверяется следующий массив объектов параметров');
-    console.log(this.splitObjectsParams);
     let error = [];
     const validationScheme = {
       number: 'number',
@@ -74,8 +73,6 @@ export default class ProtocolReader {
     });
 
     const isSuccess = error.length === 0;
-    console.log(isSuccess ? 'Well done!! Protocol split of parametrs is good!' : `bad and sad (error: ${JSON.stringify(error)})`);
-
     return isSuccess;
   }
 }
